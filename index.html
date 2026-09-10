@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="gu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Cheshta Digital Smart Online Form Tools - Photo, Signature, PDF and Print tools">
+<meta name="theme-color" content="#08254a">
+<title>Cheshta Digital | Smart Online Form Tools</title>
+<style>
+:root{--navy:#08254a;--blue:#126d99;--cyan:#20a0c5;--gold:#e1b62a;--bg:#f3f6fa;--text:#173246;--muted:#687c8b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,"Noto Sans Gujarati",sans-serif;background:var(--bg);color:var(--text)}
+.top{background:var(--navy);color:#fff;padding:9px 5%;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:14px}.nav{display:flex;gap:20px;font-weight:400;font-size:13px}.nav a{color:#fff}
+.hero{background:linear-gradient(120deg,#0a3d60,#1683aa);color:#fff;text-align:center;padding:45px 16px}.brand{font-size:37px;font-weight:800}.hero h1{font-size:29px;margin:8px 0}.hero p{margin:8px auto;max-width:800px;line-height:1.55}.pill{display:inline-block;padding:8px 14px;border:1px solid #ffffff55;background:#ffffff16;border-radius:30px;margin-top:10px;font-size:12px}
+.wrap{max-width:1120px;margin:auto;padding:25px 15px}.title{text-align:center;margin:8px 0 20px}.title h2{margin:0 0 6px}.title p{margin:0;color:var(--muted)}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{background:#fff;border-radius:17px;box-shadow:0 7px 22px #16354a18;overflow:hidden;margin-bottom:18px}.head{background:linear-gradient(100deg,#0a4569,#1b789f);color:#fff;text-align:center;font-weight:700;padding:13px;border-bottom:3px solid var(--gold)}.body{padding:18px}
+label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}input[type=file],input[type=number]{width:100%;padding:9px;border:1px solid #d5dfe7;border-radius:8px;background:#fbfcfd}.field{margin-bottom:13px}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn{border:0;border-radius:24px;padding:11px 18px;background:linear-gradient(90deg,#08758b,#29a6c7);color:#fff;font-weight:700;cursor:pointer;display:block;margin:14px auto 0}.btn:hover{filter:brightness(1.07)}
+.presets{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:8px 0 12px}.presets button{background:#fff;border:1px solid #ccd9e1;border-radius:8px;padding:8px 4px;font-size:11px;cursor:pointer}.presets button:hover{background:#eef8fc}
+.note{font-size:11px;color:#506979;background:#eef8fc;border-radius:8px;padding:8px;line-height:1.5}.status{display:flex;justify-content:space-between;gap:8px;background:#edf1f3;padding:9px;border-radius:8px;font-size:12px;margin-top:9px}.preview{max-width:100%;max-height:220px;display:none;margin:12px auto;border:1px solid #ddd;border-radius:6px}.result{text-align:center;font-size:12px;margin-top:9px}.list{min-height:44px;background:#fafcfd;border:1px dashed #c6d4dd;border-radius:8px;padding:10px;font-size:12px}.full{grid-column:1/-1}
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.service{background:#fff;border-radius:13px;text-align:center;padding:18px 8px;box-shadow:0 5px 18px #16354a12}.service b{display:block;margin-top:7px;font-size:13px}.contact{margin-top:24px;background:var(--navy);color:#fff;border-radius:17px;text-align:center;padding:25px}.wa{display:inline-block;background:#18a85b;color:#fff;padding:11px 21px;border-radius:24px;font-weight:700;margin-top:5px}
+footer{text-align:center;padding:22px;color:#718394;font-size:12px}
+@media(max-width:760px){.cards{grid-template-columns:1fr}.full{grid-column:auto}.services{grid-template-columns:1fr 1fr}.nav{display:none}.brand{font-size:29px}.hero h1{font-size:24px}.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="top"><span>✂️ Cheshta Digital – Smart Tools</span><div class="nav"><a href="#tools">Tools</a><a href="#services">Services</a><a href="#contact">Contact</a></div></div>
+
+<section class="hero">
+<div class="brand">🧰 Cheshta Digital</div>
+<h1>Smart Online Form Tools</h1>
+<p>Photo • Signature • PDF Compress • PDF Merge • JPG to PDF • Print Tools</p>
+<p>ઓનલાઇન ફોર્મ, PAN Card અને CSC કામ માટે ઝડપી અને સરળ tools.</p>
+<div class="pill">🔒 Files browserમાં process થાય છે • Server upload જરૂરી નથી</div>
+</section>
+
+<main class="wrap" id="tools">
+<div class="title"><h2>🛠️ Smart Tools</h2><p>Preset અથવા Custom size પસંદ કરો.</p></div>
+<div class="cards">
+
+<div class="card">
+<div class="head">📷 Photo Resize + KB</div><div class="body">
+<div class="field"><label>Photo Upload (JPG/PNG)</label><input id="photoFile" type="file" accept="image/jpeg,image/png"></div>
+<div class="presets"><button onclick="photoPreset(213,213)">PAN / Square</button><button onclick="photoPreset(300,400)">Passport</button><button onclick="photoPreset(600,600)">600×600</button></div>
+<div class="row"><div class="field"><label>Width (px)</label><input id="photoW" type="number" value="213" min="1"></div><div class="field"><label>Height (px)</label><input id="photoH" type="number" value="213" min="1"></div></div>
+<div class="row"><div class="field"><label>DPI</label><input id="photoDpi" type="number" value="300" min="1"></div><div class="field"><label>Target KB</label><input id="photoKB" type="number" value="50" min="1"></div></div>
+<div class="note">JPEG quality આપમેળે ઘટાડીને target KB સુધી પહોંચવાનો પ્રયાસ કરશે.</div>
+<div class="status"><span>W: <b id="pw">213</b></span><span>H: <b id="ph">213</b></span><span>DPI: <b id="pd">300</b></span></div>
+<img id="photoPreview" class="preview"><button class="btn" onclick="processImage('photo')">✨ Download Photo</button><div id="photoResult" class="result"></div>
+</div></div>
+
+<div class="card">
+<div class="head">🖊️ Signature Resize + KB</div><div class="body">
+<div class="field"><label>Signature Upload (JPG/PNG)</label><input id="signFile" type="file" accept="image/jpeg,image/png"></div>
+<div class="presets"><button onclick="signPreset(400,200)">PAN Standard</button><button onclick="signPreset(300,100)">300×100</button><button onclick="signPreset(600,300)">600×300</button></div>
+<div class="row"><div class="field"><label>Width (px)</label><input id="signW" type="number" value="400" min="1"></div><div class="field"><label>Height (px)</label><input id="signH" type="number" value="200" min="1"></div></div>
+<div class="row"><div class="field"><label>DPI</label><input id="signDpi" type="number" value="600" min="1"></div><div class="field"><label>Target KB</label><input id="signKB" type="number" value="20" min="1"></div></div>
+<div class="note">PAN અથવા બીજા portalમાં upload કરતા પહેલાં તેની exact dimensions/KB requirement ચકાસો.</div>
+<div class="status"><span>W: <b id="sw">400</b></span><span>H: <b id="sh">200</b></span><span>DPI: <b id="sd">600</b></span></div>
+<img id="signPreview" class="preview"><button class="btn" onclick="processImage('sign')">✨ Download Signature</button><div id="signResult" class="result"></div>
+</div></div>
+
+<div class="card full">
+<div class="head">📄 PDF Compress – 100 / 200 / 300 KB</div><div class="body">
+<div class="field"><label>Select PDF</label><input id="pdfFiles" type="file" accept="application/pdf" multiple></div>
+<div id="pdfList" class="list">📂 કોઈ PDF પસંદ કરેલ નથી.</div>
+<div class="presets"><button onclick="setPDFKB(100)">100 KB</button><button onclick="setPDFKB(200)">200 KB</button><button onclick="setPDFKB(300)">300 KB</button></div>
+<div class="row"><div class="field"><label>Target KB</label><input id="targetKB" type="number" value="300" min="30"></div><div class="field"><label>Image Quality</label><input id="quality" type="number" value="55" min="10" max="95"></div></div>
+<div class="note">PDF pagesને compressed images તરીકે recreate કરવામાં આવશે. Text/vector PDFનું original structure બદલાઈ શકે છે.</div>
+<button class="btn" onclick="compressPDF()">🗜️ Compress PDF</button><div id="pdfResult" class="result"></div>
+</div></div>
+
+<div class="card full">
+<div class="head">🔗 PDF Merge</div><div class="body">
+<div class="field"><label>Select 2 or more PDF files</label><input id="mergeFiles" type="file" accept="application/pdf" multiple></div>
+<div id="mergeList" class="list">📂 કોઈ PDF ઉમેરેલ નથી.</div>
+<button class="btn" onclick="mergePDFs()">🔗 Merge & Download</button><div id="mergeResult" class="result"></div>
+</div></div>
+
+<div class="card full">
+<div class="head">🖼️ JPG Images → One PDF</div><div class="body">
+<div class="field"><label>Select JPG/PNG images</label><input id="jpgFiles" type="file" accept="image/jpeg,image/png" multiple></div>
+<div id="jpgList" class="list">📂 કોઈ image પસંદ કરેલ નથી.</div>
+<button class="btn" onclick="imagesToPDF()">📄 Create PDF</button><div id="jpgResult" class="result"></div>
+</div></div>
+
+</div>
+
+<section id="services">
+<div class="title"><h2>🇮🇳 Cheshta Digital Services</h2><p>CSC અને online form assistance.</p></div>
+<div class="services">
+<div class="service">📷<b>Passport Photo</b><span>Print-ready</span></div>
+<div class="service">🪪<b>PAN Card</b><span>Photo & Signature</span></div>
+<div class="service">📝<b>Online Forms</b><span>Form Filling</span></div>
+<div class="service">🖨️<b>Print & PDF</b><span>Resize / Merge</span></div>
+</div>
+</section>
+
+<section id="contact" class="contact">
+<h2>📞 ચેષ્ટા ડિજિટલ – CSC સેન્ટર</h2>
+<p>તમારો વિશ્વાસ – અમારી શ્રેષ્ઠ સેવા</p>
+<p>ગુન્ડિચા • બેંક ઓફ બરોડા સામે • તા. સંખેડા • જિ. છોટાઉદેપુર • ગુજરાત – 391145</p>
+<a class="wa" href="https://wa.me/918238525289" target="_blank" rel="noopener">💬 WhatsApp Contact</a>
+</section>
+</main>
+<footer>© 2026 Cheshta Digital • Smart Online Form Tools</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+function sync(){$('pw').textContent=$('photoW').value;$('ph').textContent=$('photoH').value;$('pd').textContent=$('photoDpi').value;$('sw').textContent=$('signW').value;$('sh').textContent=$('signH').value;$('sd').textContent=$('signDpi').value}
+['photoW','photoH','photoDpi','signW','signH','signDpi'].forEach(x=>$(x).addEventListener('input',sync));
+function photoPreset(w,h){$('photoW').value=w;$('photoH').value=h;sync()}
+function signPreset(w,h){$('signW').value=w;$('signH').value=h;sync()}
+function setPDFKB(k){$('targetKB').value=k}
+function listFiles(input,list){let fs=[...$(input).files];$(list).innerHTML=fs.length?fs.map((f,i)=>`${i+1}. ${f.name} — ${(f.size/1024).toFixed(1)} KB`).join('<br>'):'📂 કોઈ file પસંદ કરેલ નથી.'}
+$('pdfFiles').addEventListener('change',()=>listFiles('pdfFiles','pdfList'));$('mergeFiles').addEventListener('change',()=>listFiles('mergeFiles','mergeList'));$('jpgFiles').addEventListener('change',()=>listFiles('jpgFiles','jpgList'));
+
+function processImage(type){
+ const file=$(type==='photo'?'photoFile':'signFile').files[0];if(!file){alert('કૃપા કરીને image પસંદ કરો.');return}
+ const w=+$(type==='photo'?'photoW':'signW').value,h=+$(type==='photo'?'photoH':'signH').value,target=+(type==='photo'?'photoKB':'signKB').value;
+ const r=new FileReader();r.onload=e=>{const img=new Image();img.onload=()=>{const c=document.createElement('canvas');c.width=w;c.height=h;const ctx=c.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h);ctx.imageSmoothingQuality='high';ctx.drawImage(img,0,0,w,h);let q=.92;function make(){c.toBlob(b=>{if(b.size>target*1024&&q>.15){q-=.07;make();return}const prev=$(type==='photo'?'photoPreview':'signPreview');prev.src=URL.createObjectURL(b);prev.style.display='block';const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=`CheshtaDigital_${type}_${w}x${h}.jpg`;a.click();$(type==='photo'?'photoResult':'signResult').textContent=`✅ ${(b.size/1024).toFixed(1)} KB • ${w}×${h}px`;},'image/jpeg',q)}make()};img.src=e.target.result};r.readAsDataURL(file)
+}
+async function getPDFJS(){if(window._pdfjs)return window._pdfjs;window._pdfjs=await import('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs');window._pdfjs.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs';return window._pdfjs}
+async function compressOne(file,target,q){const pj=await getPDFJS(),pdf=await pj.getDocument({data:await file.arrayBuffer()}).promise;let scale=1.15,out;for(let attempt=0;attempt<5;attempt++){const doc=new jspdf.jsPDF({orientation:'p',unit:'pt',format:'a4',compress:true});for(let p=1;p<=pdf.numPages;p++){const page=await pdf.getPage(p),vp=page.getViewport({scale}),c=document.createElement('canvas');c.width=Math.floor(vp.width);c.height=Math.floor(vp.height);await page.render({canvasContext:c.getContext('2d'),viewport:vp}).promise;const jpg=c.toDataURL('image/jpeg',q/100);if(p>1)doc.addPage();doc.addImage(jpg,'JPEG',0,0,595.28,841.89,undefined,'FAST')}out=doc.output('blob');if(out.size<=target*1024)break;scale*=.72;q=Math.max(22,q-8)}return out}
+async function compressPDF(){const fs=[...$('pdfFiles').files];if(!fs.length){alert('PDF પસંદ કરો.');return}const target=+$('targetKB').value,q=+$('quality').value;$('pdfResult').textContent='⏳ Compress થઈ રહ્યું છે...';try{for(const f of fs){const b=await compressOne(f,target,q),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=`CheshtaDigital_${f.name.replace(/\.pdf$/i,'')}_compressed.pdf`;a.click();$('pdfResult').textContent=`✅ ${f.name}: ${(b.size/1024).toFixed(1)} KB`}}catch(e){$('pdfResult').textContent='❌ '+e.message}}
+async function mergePDFs(){const fs=[...$('mergeFiles').files];if(fs.length<2){alert('ઓછામાં ઓછા 2 PDF પસંદ કરો.');return}$('mergeResult').textContent='⏳ Merge થઈ રહ્યું છે...';try{const m=await PDFLib.PDFDocument.create();for(const f of fs){const s=await PDFLib.PDFDocument.load(await f.arrayBuffer());(await m.copyPages(s,s.getPageIndices())).forEach(p=>m.addPage(p))}const b=new Blob([await m.save()],{type:'application/pdf'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='CheshtaDigital_Merged.pdf';a.click();$('mergeResult').textContent=`✅ Merge complete: ${(b.size/1024).toFixed(1)} KB`}catch(e){$('mergeResult').textContent='❌ '+e.message}}
+async function imagesToPDF(){const fs=[...$('jpgFiles').files];if(!fs.length){alert('Images પસંદ કરો.');return}$('jpgResult').textContent='⏳ PDF બનાવાઈ રહ્યું છે...';try{const {jsPDF}=window.jspdf,doc=new jsPDF({orientation:'p',unit:'pt',format:'a4'});for(let i=0;i<fs.length;i++){const url=await new Promise(res=>{const r=new FileReader();r.onload=e=>res(e.target.result);r.readAsDataURL(fs[i])});const img=await new Promise(res=>{const im=new Image();im.onload=()=>res(im);im.src=url});if(i)doc.addPage();const maxW=540,maxH=780,ratio=Math.min(maxW/img.width,maxH/img.height),w=img.width*ratio,h=img.height*ratio;doc.addImage(url,'JPEG',(595.28-w)/2,(841.89-h)/2,w,h)}doc.save('CheshtaDigital_Images_to_PDF.pdf');$('jpgResult').textContent='✅ PDF તૈયાર'}catch(e){$('jpgResult').textContent='❌ '+e.message}}
+sync();
+</script>
+</body>
+</html>
